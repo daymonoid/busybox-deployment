@@ -1,22 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox-deployment
+  name: alpine-deployment
   labels:
-    app: busybox
+    app: alpine
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: busybox
+      app: alpine
   template:
     metadata:
       labels:
-        app: busybox
+        app: alpine
     spec:
       containers:
-      - name: busybox
-        image: busybox
+      - name: alpine
+        image: alpine:latest
         imagePullPolicy: IfNotPresent
-        
-        command: ['sh', '-c', 'echo Container 1 is Running ; sleep 360000']
