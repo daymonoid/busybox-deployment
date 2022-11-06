@@ -18,4 +18,4 @@ spec:
       - name: alpine
         image: alpine:latest
         imagePullPolicy: IfNotPresent
-        command: ['sh', '-c', 'echo Container 1 is Running ; sleep 360000']
+        command: ['sh', '-c', 'apk update && apk add wget curl busybox-extras; sleep 360000']
