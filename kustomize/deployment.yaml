@@ -18,4 +18,8 @@ spec:
       - name: alpine
         image: alpine:latest
         imagePullPolicy: IfNotPresent
+        ports:
+          - name: web
+            containerPort: 80
+            protocol: TCP
         command: ['sh', '-c', 'apk update && apk add wget curl busybox-extras nginx; nginx && sleep 360000']
